@@ -1,6 +1,7 @@
 package io.github.vixo341.simpletodoapp.Model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tasks")
@@ -9,6 +10,7 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
+    @NotBlank(message = "Task's description must not be empty!!")
     @Column(name = "description")
     private String description;
 
